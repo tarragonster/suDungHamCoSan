@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var inputNum = parseInt(prompt("Please enter a number"));
+    theData = 0;
+
+    theNewArray = theAdjustedArray(inputNum);
+
+    for (i = 0; i < theNewArray.length; i++) {
+
+        if (theNewArray[i] % 2 == 0 && theNewArray[i + 1] % 2 == 0) {
+
+                theData = theData + theNewArray[i] + "-"
+
+        } else {
+            theData = theData + theNewArray[i] + " ";
+        }
+    }
+    document.write(theData);
+
+
+    function theAdjustedArray(a) {
+
+        theArray = [];
+
+        for (i = 0; a > 0; i++) {
+            b = a;
+
+            a = parseInt(a / 10);
+            b = parseInt(b % 10);
+
+            theArray.unshift(b);
+
+        }
+        return theArray;
+    }
+
+
+</script>
+</body>
+</html>
